@@ -1,6 +1,8 @@
 package realestate;
 
-public class RealEstate implements PropertyInterface {
+import java.util.Comparator;
+
+public class RealEstate implements PropertyInterface, Comparable<RealEstate> {
     private String city;
     private double price;
     private int sqm;
@@ -102,5 +104,10 @@ public class RealEstate implements PropertyInterface {
                 ", Total Price=" + getTotalPrice() +
                 ", Average Sqm/Room=" + averageSqmPerRoom() +
                 '}';
+    }
+
+    @Override
+    public int compareTo(RealEstate o) {
+        return price<o.price?-1:(price==0?0:-1);
     }
 }
