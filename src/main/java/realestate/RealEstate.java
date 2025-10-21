@@ -108,6 +108,7 @@ public class RealEstate implements PropertyInterface, Comparable<RealEstate> {
 
     @Override
     public int compareTo(RealEstate o) {
-        return price<o.price?-1:(price==0?0:-1);
+        return Double.compare(this.price, o.price);
     }
+
 }
